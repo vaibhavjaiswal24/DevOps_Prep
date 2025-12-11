@@ -1,0 +1,281 @@
+🛠️ CONFIGURATION MANAGEMENT–SPECIFIC QUESTIONS
+1. What is Configuration Management in DevOps?
+
+Answer:
+“Configuration Management ensures consistency across code, builds, environments, and infrastructure.
+It manages changes in source code, build scripts, dependencies, environment configurations, and deployment artifacts so that every build is repeatable and reliable.”
+
+2. What are key CM responsibilities?
+
+Answer:
+“Key CM responsibilities include:
+
+Managing version control systems (branching, merging, tagging)
+
+Maintaining build and release processes
+
+Managing configuration changes for builds and environments
+
+Ensuring consistency across development, SIT, QA, and production
+
+Creating automation to improve developer productivity
+
+Standardizing tools and processes for build, test, and release”
+
+3. What is the difference between CM and Release Engineering?
+
+Answer:
+“Configuration Management focuses on how code and systems are structured, including version control, build configs, scripts, and reproducibility.
+Release Engineering focuses on how software is packaged, deployed, and delivered across environments.
+CM ensures consistency; Release Engineering ensures delivery.”
+
+4. How do you maintain consistency across builds?
+
+Answer:
+“I maintain consistency by:
+
+Pinning dependency versions
+
+Using standardized Gradle or CI/CD templates
+
+Storing all configs in version control
+
+Using immutable build agents or containers
+
+Automating build validation and code quality gates
+
+Tagging builds and generating artifacts systematically”
+
+5. What tools have you used for CM?
+
+Answer:
+“My primary CM tools are Git, GitHub, and SVN.
+I handled branching strategy, governance, access controls, PR rules, and performed a full SVN→Git migration with history preservation.”
+
+6. How do you track changes to build configs, scripts, infra code?
+
+Answer:
+“I treat all configurations as code—build scripts, YAML CI/CD pipelines, Terraform modules, and automation scripts are stored in Git and follow the same review, versioning, and tagging process as application code.”
+
+7. Explain your experience with versioning strategies.
+
+Answer:
+“I use Semantic Versioning—MAJOR.MINOR.PATCH.
+I automate tagging in CI so every build has a traceable version.
+For libraries or modular builds, I use Gradle’s version catalogs to manage versions centrally.”
+
+🌿 BRANCHING + CODE STREAMS QUESTIONS
+1. Explain branching strategies you implemented.
+
+Answer:
+“I implemented GitFlow-like workflows with:
+
+main/master → production
+
+develop → integration
+
+feature branches → individual work
+
+release branches → stabilization
+
+hotfix branches → critical fixes
+I enforced PR approvals, branch protection, and automated checks.”
+
+2. How do you manage long-lived branches?
+
+Answer:
+“I avoid long-lived branches, but if required:
+
+I rebase/merge them with develop frequently
+
+Perform code scans
+
+Keep their scope small
+
+Ensure early integration to reduce conflicts”
+
+3. What is the difference between merge and rebase?
+
+Answer:
+“Merge creates a new commit combining histories; rebase rewrites history by placing your changes on top of another branch.
+Merge is safe; rebase gives a cleaner linear history.”
+
+4. How do you avoid merge conflicts?
+
+Answer:
+“Frequent merges/rebases, smaller feature branches, using code owners, enforcing reviews, and detecting conflicts via CI checks before merging.”
+
+5. How did you handle code history in SVN→Git migration?
+
+Answer:
+“I preserved full commit history using git-svn, mapped authors, cleaned repository structure, and validated commits after migration.
+Then I trained teams on Git usage and branching.”
+
+6. How do you manage multiple repos for large projects?
+
+Answer:
+“I standardize folder structure, maintain shared Gradle modules/libraries, create reusable pipeline templates, and enforce consistent branching and tagging across all repos.”
+
+7. How do you ensure developers follow Git standards?
+
+Answer:
+“I enforce branch protections, PR templates, code reviews, and automated checks for builds/quality.
+I also conduct Git training sessions and provide documentation.”
+
+⚙️ BUILD ENGINEERING & RELEASE MANAGEMENT QUESTIONS
+1. What challenges did you face in Ant → Gradle migration?
+
+Answer:
+“The biggest challenges were dependency mapping, build file restructuring, modularizing tasks, and integrating with CI/CD.
+I resolved them by creating multi-module Gradle builds, using dependency catalogs, and testing each module independently.”
+
+2. How does Gradle improve build performance?
+
+Answer:
+“Gradle improves performance through:
+
+Incremental builds
+
+Build caching
+
+Parallel execution
+
+Task avoidance
+These features significantly reduced our build time by 40%.”
+
+3. What is a build cache?
+
+Answer:
+“Gradle’s build cache stores outputs of previous tasks.
+If inputs haven’t changed, Gradle reuses cached outputs instead of re-executing the task.”
+
+4. How do you set up Gradle in CI/CD?
+
+Answer:
+“I configure:
+
+Gradle wrapper
+
+Caching strategies (local & remote)
+
+Dependency scanning
+
+SonarQube integration
+
+Test execution
+
+Artifact packaging
+
+Version tagging
+I use YAML pipelines and reusable templates.”
+
+5. How do you handle build dependencies?
+
+Answer:
+“I pin dependency versions, use version catalogs, generate dependency locks, and validate dependencies using Gradle’s dependencyInsight.”
+
+6. What is your experience with Bamboo & Azure DevOps?
+
+Answer:
+“I automated build and patch deployment pipelines in Bamboo using scripts and integrated several project pipelines into Azure DevOps.
+I also created templates, variable groups, service connections, and quality gates.”
+
+7. How do you ensure consistent build artifacts across environments?
+
+Answer:
+“By using immutable artifacts, version-tagged builds, pinned dependencies, centralized templates, and storing everything in artifact repositories instead of rebuilding.”
+
+🐍 SCRIPTING & AUTOMATION QUESTIONS
+1. What Python scripts have you built?
+
+Answer:
+“I built:
+
+ADO bug analysis automation (processed 5,000+ bugs)
+
+SonarQube summary generator
+
+Secret-detection Git pre-commit hook
+
+Hung-thread detection & server restart scripts
+
+Patch deployment automation
+These scripts significantly reduced manual effort.”
+
+2. How do you call REST APIs in Python?
+
+Answer:
+“Using the requests library:
+
+I authenticate using PAT or OAuth
+
+Make GET/POST calls
+
+Parse JSON
+
+Handle pagination
+
+Export results to Excel or CSV”
+
+3. Explain multiprocessing/batch optimization for 5,000+ bug processing.
+
+Answer:
+“I divided API requests into batches and used multiprocessing to call APIs in parallel.
+This reduced execution time drastically and prevented rate-limit throttling.”
+
+4. How do you handle exceptions/logging in scripts?
+
+Answer:
+“I use try-except blocks, structured logs, timestamps, log rotation, and detailed error messages so debugging becomes straightforward.”
+
+5. How do you schedule automation tasks?
+
+Answer:
+“Using cron jobs on Linux or scheduled pipelines in Azure DevOps.
+For some scripts, I integrate them directly into CI/CD.”
+
+6. How do you write scripts that support CI/CD tools?
+
+Answer:
+“I parameterize scripts, avoid hard-coded paths, log outputs, return exit codes properly, and package scripts in repo folders so pipelines can call them easily.”
+
+🐧 LINUX/UNIX TROUBLESHOOTING QUESTIONS
+1. Common Linux commands you use daily?
+
+Answer:
+“ps, top, grep, tail, sed, awk, du, df, netstat/ss, chmod, chown, kill, find, scp, journalctl, systemctl.”
+
+2. How to check process health / threads / memory?
+
+Answer:
+“I use:
+
+ps -ef → running processes
+
+top / htop → live CPU/memory usage
+
+pmap → memory maps
+
+jstack for Java thread dumps
+
+free -m → RAM usage
+
+vmstat / iostat for system health”
+
+3. How to kill hung processes or detect high CPU?
+
+Answer:
+“Detect via top, ps, or thread dumps.
+Kill using kill -9 <PID> if graceful shutdown fails.
+I also analyze logs to prevent recurrence.”
+
+4. How do you debug build failures in Unix environments?
+
+Answer:
+“Check logs, environment variables, file permissions, dependency paths, Java versions, missing tools, or inconsistent agent configurations.”
+
+5. How do you manage file permissions in Unix?
+
+Answer:
+“Using chmod, chown, and umask.
+I ensure service accounts and pipeline agents have restricted but required permissions.”
