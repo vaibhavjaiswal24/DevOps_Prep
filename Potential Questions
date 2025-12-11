@@ -1,0 +1,182 @@
+TOP 20 HIGH-PROBABILITY QUESTIONS (Based on JD + Your Resume)
+1. Walk me through your experience in Configuration Management.
+
+They want to hear about:
+
+Git branching & governance
+
+SVN → Git migration
+
+Build pipelines (Gradle, Azure DevOps)
+
+Release engineering experience
+
+Automation scripts you built
+
+2. How did you manage multiple branches and code streams?
+
+Expected from your SVN→Git migration & Git governance work.
+
+3. What CM tools have you used and how deeply?
+
+Mention:
+
+Git, SVN, GitHub
+
+Branch protections, PR policies
+
+Merging, rebasing, conflict resolution
+
+Migration experience
+(They listed Perforce/ClearCase but Git knowledge is still valuable.)
+
+4. Explain your experience with build systems (Ant, Gradle, Maven).
+
+This is your strongest area (Ant→Gradle migration).
+
+5. What productivity tools have you designed or automated?
+
+Pick examples from resume:
+
+ADO bug analysis automation
+
+Sonar report generator
+
+Git pre-commit hook
+
+Restart/hung-thread detection scripts
+
+6. Can you explain any major migration project you led?
+
+You have 3 big ones:
+
+Ant→Gradle
+
+SVN→Git
+
+WebSphere→Liberty
+
+7. How do you troubleshoot build failures?
+
+Common areas:
+
+Dependency issues
+
+Environment mismatch
+
+Gradle build cache
+
+SonarScanner failures
+
+SCM issues
+
+8. What’s your experience with Unix/Linux in DevOps?
+
+They want to check command-line fluency.
+
+9. Tell me about a time you refactored or optimized an existing service.
+
+Your Gradle pipeline improvement → perfect match.
+
+10. How do you standardize operational processes across teams?
+
+Your experience:
+
+Azure DevOps adoption
+
+Created docs, training
+
+CI/CD templates
+
+Governance
+
+11. How do you handle conflicting priorities or multiple builds/releases?
+12. Give an example of how you proactively solved a problem.
+
+Great example:
+
+Hung thread monitoring automation
+
+Bug analysis automation
+
+Dependency identification (award-winning)
+
+13. What scripting languages do you use? Why Python?
+
+JD mentions Python/Perl/PHP/TCL.
+
+14. How do you ensure build repeatability and reliability?
+15. Have you worked with C/C++ codebases or native builds?
+
+Even if minimal → Frame your answer smartly.
+
+16. How do you handle versioning and tagging in releases?
+17. Explain a situation where you supported developers during a production issue.
+18. How do you translate user requirements into technical solutions?
+
+Use your real examples:
+
+Bug analysis report
+
+Sonar summary generator
+
+ADO utilities
+
+19. Tell me about your experience mentoring junior engineers.
+
+You trained dev teams on:
+
+Gradle
+
+Azure DevOps
+
+Git
+
+20. Why do you want to move to a CM/DevOps role in Noida?
+
+(They ALWAYS ask this.)
+
+🛠️ CONFIGURATION MANAGEMENT–SPECIFIC QUESTIONS
+1. What is Configuration Management in DevOps?
+2. What are key CM responsibilities?
+3. What is the difference between CM and Release Engineering?
+4. How do you maintain consistency across builds?
+5. What tools have you used for CM? (Git, SVN)
+6. How do you track changes to build configs, scripts, infra code?
+7. Explain your experience with versioning strategies (semantic versioning/tagging).
+🌿 BRANCHING + CODE STREAMS QUESTIONS (High focus area)
+1. Explain branching strategies you implemented.
+2. How do you manage long-lived branches?
+3. What is the difference between merge and rebase?
+4. How do you avoid merge conflicts?
+5. How did you handle code history in SVN→Git migration?
+6. How do you manage multiple repos for large projects?
+7. How do you ensure developers follow Git standards?
+⚙️ BUILD ENGINEERING & RELEASE MANAGEMENT QUESTIONS
+1. What challenges did you face in Ant → Gradle migration?
+2. How does Gradle improve build performance?
+3. What is a build cache? How does it work?
+4. How do you set up Gradle in CI/CD?
+5. How do you handle build dependencies?
+6. What is your experience with Bamboo & Azure DevOps builds?
+7. How do you ensure consistent build artifacts across environments?
+🐍 SCRIPTING & AUTOMATION QUESTIONS (Python-focused)
+1. What Python scripts have you built?
+2. How do you call REST APIs in Python?
+3. Explain multiprocessing/batch optimization you used for 5,000+ bug processing.
+4. How do you handle exceptions/logging in automation scripts?
+5. How do you schedule automation tasks?
+6. How do you write scripts that support CI/CD tools?
+🐧 LINUX/UNIX TROUBLESHOOTING QUESTIONS
+1. Common Linux commands you use daily?
+2. How to check process health / threads / memory?
+3. How to kill hung processes or detect high CPU?
+4. How do you debug build failures in Unix environments?
+5. How do you manage file permissions in Unix?
+👥 BEHAVIORAL QUESTIONS (Expect these)
+1. Tell me about a time you resolved a critical build issue under pressure.
+2. Tell me about a time you managed multiple priorities.
+3. Describe a situation where you identified a long-term inefficiency and fixed it.
+4. How do you handle disagreement with developers about build strategy?
+5. How do you mentor junior engineers?
+6. What motivates you in DevOps/CM roles?
